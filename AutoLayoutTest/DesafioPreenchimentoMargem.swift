@@ -18,13 +18,47 @@
 import UIKit
 
 class DesafioPreenchimentoMargem: UIViewController {
-
+    
+    private lazy var containerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .systemYellow
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    private lazy var contentView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .systemBlue
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view.backgroundColor = .systemGray
+        setupUI()
     }
     
+    private func setupUI() {
+        view.addSubview(containerView)
+        view.addSubview(contentView)
+        
+        NSLayoutConstraint.activate([
+            containerView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            containerView.heightAnchor.constraint(equalToConstant: 300),
+            containerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            containerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            
+            contentView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -40),
+            contentView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 40),
+            contentView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 40),
+            contentView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -40)
 
-  
-
+            
+        ])
+    }
+    
+    
+    
+    
 }
