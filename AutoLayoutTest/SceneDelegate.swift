@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = UINavigationController(rootViewController: DesafioStackView())
+        window?.rootViewController = UINavigationController(rootViewController: DesafioVerticalContentHugging())
         window?.makeKeyAndVisible()
         
         func sceneDidDisconnect(_ scene: UIScene) {
